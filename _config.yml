@@ -1,0 +1,22 @@
+title: <p align="center"> Juan Pablo Ortega </p>
+
+logo: "/images/photo.png?raw=true"
+
+description: 
+  <p align="center">
+  Medellin, Colombia
+  <br> jpablo.ortega@outlook.com
+  <br> <a href="/pdf/CV_JPOM_English.pdf">Resume</a>
+  <br><a href="https://www.linkedin.com/in/jpablo-ortega/">LinkedIn | Juan Pablo Ortega</a>
+  <br><a href="https://github.com/5jpablo">GitHub | 5jpablo</a>
+  </p>
+
+  <p align="justify">
+  I am a <b>Data Scientist</b> with a professional background as a <b>Petroleum Engineer</b>. I have a solid foundation in programming, mathematics, statistics, and finance, oriented towards data analysis, machine learning, and artificial intelligence, especially in financial markets.
+  <br><br>
+  My goal is to apply my technical knowledge to optimize strategies and make informed decisions.
+  <br><br>
+  </p>
+
+theme: jekyll-theme-minimal
+google_analytics:
