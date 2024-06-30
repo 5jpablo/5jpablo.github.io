@@ -1,14 +1,75 @@
----
-layout: default
----
-
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-<h1>{{ page.title }}</h1>
-
-<p class="view">by {{ page.author | default: site.author }}</p>
-
-{{content}}
-
-{% if page.tags %}
-  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding-top: 40px; /* Adjust based on header height */
+      /* Add padding-top to push content below header */
+    }
+    header {
+      background: #f8f9fa;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    header nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    header nav ul li {
+      margin-right: 1rem;
+    }
+    main {
+      flex: 1;
+      padding: 1rem;
+    }
+    footer {
+      background: #f8f9fa;
+      padding: 0.5rem; /* Reduced padding */
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000;
+      white-space: nowrap; /* Prevent wrapping */
+    }
+    footer p {
+      margin: 0; /* Remove default margin */
+      line-height: 1; /* Ensure text is on a single line */
+      display: inline; /* Ensure the whole text is inline */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1>{{ page.title }}</h1>
+      <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
+      {{ content }}
+    </article>
+  </main>
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+  </footer>
+</body>
+</html>
