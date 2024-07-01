@@ -14,13 +14,13 @@ title: "Inicio"
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/5jpablo/Osteoporosis_Prediction)
 
 
-_Key Skills: Python, Tableau_
+_Key Skills: Python, Exploratory data analysys, machine learning algorithm (Logistic Regression, Decision Tree, Random Forest, KNN, SVC, Gradient Boosting), model evaluation and selection_
 
 <div style="text-align: justify">
-Descripcion del proyecto
+The project focuses on the implementation of machine learning models to predict the risk of osteoporosis in patients from their medical records. They identified significant factors that influence risk, such as age, hormonal changes, medical history, lifestyle and nutrition. Gradient Boosting proved to be the most effective model, with an accuracy of 92.01%. This model has promising potential for early intervention and preventive strategies.
 </div>
 <br>
-<center><img src=""/></center>
+<center><img src="/projects/Osteoporosis_Risk_Prediction_files/Osteoporosis_Risk_Prediction_78_0.png"/></center>
 <br>
 
 ---

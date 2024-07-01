@@ -1,11 +1,10 @@
 ---
 layout: post
 sidebar: false
+title: Osteoporosis Risk Prediction
 ---
 
 ## 1. Introduction
-
-## Osteoporosis Risk Prediction
 
 ### Project Overview
 The goal of this project is to predict osteoporosis risk using a dataset of patients' medical records. Osteoporosis is a condition that weakens bones, increasing the likelihood of fractures, often diagnosed after minor falls or impacts. It predominantly affects older individuals.
@@ -13,25 +12,27 @@ The goal of this project is to predict osteoporosis risk using a dataset of pati
 ### Dataset Description
 The dataset provides comprehensive health information influencing osteoporosis development, including demographics, lifestyle choices, medical history, and bone health indicators. It supports research in osteoporosis prediction, aiding machine learning models in identifying at-risk individuals. Factors such as age, gender, hormonal changes, and lifestyle habits are analyzed to enhance osteoporosis management and prevention strategies.
 
-### Data Dictionary
-| Column                          | Description                                         |
-|---------------------------------|-----------------------------------------------------|
-| ID                              | Unique identifier for each patient                   |
-| Age                             | Patient's age                                       |
-| Gender                          | Patient's gender                                    |
-| Hormonal Changes                | Indicates hormonal changes in the patient           |
-| Family History with Osteoporosis| Indicates family history of osteoporosis            |
-| Race/Ethnicity                  | Patient's race or ethnicity                         |
-| Body Weight                     | Patient's weight details                            |
-| Calcium                         | Calcium levels in the patient's body                |
-| Vitamin D                       | Vitamin D levels in the patient's body              |
-| Physical Activity               | Details of physical activity                        |
-| Smoking                         | Indicates whether the patient smokes                |
-| Alcohol Consumption             | Indicates whether the patient consumes alcohol      |
-| Medical Conditions              | Patient's medical conditions                       |
-| Medication                      | Details of medications                             |
-| Prior Fracture                  | Indicates whether the patient has had a prior fracture |
-| Osteoporosis                    | Indicates whether the patient has osteoporosis      |
+#### Data Dictionary
+
+| Column                           | Description                                              |
+|----------------------------------|----------------------------------------------------------|
+| ID                               | Unique identifier for each patient                       |
+| Age                              | Patient's age                                            |
+| Gender                           | Patient's gender                                         |
+| Hormonal Changes                 | Indicates hormonal changes in the patient                |
+| Family History with Osteoporosis | Indicates family history of osteoporosis                 |
+| Race/Ethnicity                   | Patient's race or ethnicity                              |
+| Body Weight                      | Patient's weight details                                 |
+| Calcium                          | Calcium levels in the patient's body                     |
+| Vitamin D                        | Vitamin D levels in the patient's body                   |
+| Physical Activity                | Details of physical activity                             |
+| Smoking                          | Indicates whether the patient smokes                     |
+| Alcohol Consumption              | Indicates whether the patient consumes alcohol           |
+| Medical Conditions               | Patient's medical conditions                             |
+| Medication                       | Details of medications                                   |
+| Prior Fracture                   | Indicates whether the patient has had a prior fracture   |
+| Osteoporosis                     | Indicates whether the patient has osteoporosis           |
+
 
 ### Potential analysis.
 
