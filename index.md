@@ -18,7 +18,7 @@ title: "Inicio"
 </div>
 <br>
 <div style="text-align: justify">
-Descripcion del proyecto
+This project explores the potential of deep learning for stock market forecasting by developing a Long Short-Term Memory (LSTM) neural network model to predict the future prices of the S&P 500 index. The LSTM model will be compared with traditional statistical models, ARIMA and SARIMA, to evaluate its effectiveness in capturing complex patterns and making accurate predictions. The project aims to develop a robust and reliable LSTM model that can provide valuable insights for investors and financial analysts in making informed decisions.
 </div>
 <br>
 <center><img src=""/></center>
