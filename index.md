@@ -14,7 +14,7 @@ title: "Inicio"
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/5jpablo/Forecasting-SP500)
 
 <div style="text-align: justify; line-height: 1.2;">
-    <em>Key Skills: Python.</em>
+    <em>Key Skills: Python, time series analysis, machine learning, statistical modeling (ARIMA, SARIMA), deep learning (LSTM).</em>
 </div>
 <br>
 <div style="text-align: justify">
