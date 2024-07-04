@@ -1,3 +1,9 @@
+---
+layout: post
+sidebar: false
+title: Forecasting S&P 500 Stock Index
+---
+
 ## 1. Introduction
 
 In this project, the objective is to forecast the future prices of the S&P 500 index using a combination of statistical and deep learning models. The S&P 500 is a widely-followed stock market index that measures the performance of 500 of the largest companies listed on stock exchanges in the United States. Accurate forecasting of its prices is crucial for investors, financial analysts, and policymakers.
