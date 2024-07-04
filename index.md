@@ -10,7 +10,7 @@ title: "Inicio"
 # Deep Learning: Time Series Forecasting.
 
 ## Forecasting S&P 500 Stock Index.
-[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-E97627?logo=Jupyter)](/projects/Forecasting_SP500_Stock_Index.html)
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-E97627?logo=Jupyter)](/projects/Forecasting_SP500.html)
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/5jpablo/Forecasting-SP500)
 
 <div style="text-align: justify; line-height: 1.2;">
@@ -21,7 +21,7 @@ title: "Inicio"
 This project explores the potential of deep learning for stock market forecasting by developing a Long Short-Term Memory (LSTM) neural network model to predict the future prices of the S&P 500 index. The LSTM model will be compared with traditional statistical models, ARIMA and SARIMA, to evaluate its effectiveness in capturing complex patterns and making accurate predictions. The project aims to develop a robust and reliable LSTM model that can provide valuable insights for investors and financial analysts in making informed decisions.
 </div>
 <br>
-<center><img src=""/></center>
+<center><img src="./projects/Forecasting_SP500_files/Forecasting_SP500_46_0.png"/></center>
 <br>
 
 ---
