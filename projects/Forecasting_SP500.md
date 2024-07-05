@@ -1,7 +1,7 @@
 ---
 layout: post
 sidebar: false
-title: Forecasting S&P 500 Stock Index
+title: Osteoporosis Risk Prediction
 ---
 
 ## 1. Introduction
@@ -11,22 +11,21 @@ In this project, the objective is to forecast the future prices of the S&P 500 i
 Three different methodologies will be employed to achieve this goal:
 
 - **ARIMA (AutoRegressive Integrated Moving Average)**: A popular statistical method for time series forecasting that captures the linear dependencies in the data.
-- **SARIMA (Seasonal AutoRegressive Integrated Moving Average)**: An extension of ARIMA that handles seasonality in the data, providing a more comprehensive approach for time series with seasonal patterns.
-- **LSTM (Long Short-Term Memory)**: A type of recurrent neural network (RNN) that is well-suited for capturing long-term dependencies and non-linear patterns in time series data.
+- **RNN (Recurrent Neural Network)**: A type of neural network designed to work with sequence data, capable of capturing temporal dependencies in time series.
+- **LSTM (Long Short-Term Memory)**: A more advanced type of recurrent neural network (RNN) that is well-suited for capturing long-term dependencies and non-linear patterns in time series data.
 
 By leveraging these models, the project aims to compare their performance and determine the most effective approach for predicting the S&P 500 index prices. The project will involve several key steps, including data collection, preprocessing, model building, evaluation, and implementation.
 
-### Project Steps
+## Project Steps
 
-- **Data Collection**: Historical data of the S&P 500 index will be gathered using the Yahoo Finance API.
-- **Data Preprocessing**: The data will be cleaned and prepared for modeling. This includes handling missing values, normalizing the data, and creating training and test sets.
-- **Model Building**:
-   - **ARIMA**: The optimal parameters (p, d, q) will be identified, and the ARIMA model will be fitted.
-   - **SARIMA**: The seasonal components will be identified, and the SARIMA model will be fitted.
-   - **LSTM**: An LSTM network will be designed and trained to capture the complex patterns in the time series data.
-- **Model Evaluation**: The models will be evaluated based on their predictive performance using metrics such as RMSE (Root Mean Squared Error), MAE (Mean Absolute Error), and MAPE (Mean Absolute Percentage Error).
-- **Forecasting and Visualization**: The trained models will be used to forecast future prices of the S&P 500, and the results will be visualized to compare their effectiveness.
-- **Implementation**: The final models will be deployed in a user-friendly application for real-time forecasting.
+1. **Data Collection**: Historical data of the S&P 500 index will be gathered using the Yahoo Finance API.
+2. **Data Preprocessing**: The data will be cleaned and prepared for modeling. This includes handling missing values, normalizing the data, and creating training and test sets.
+3. **Model Building**:
+    - **ARIMA**: The optimal parameters (p, d, q) will be identified, and the ARIMA model will be fitted.
+    - **RNN**: A simple RNN will be designed and trained to capture temporal patterns in the time series data.
+    - **LSTM**: An LSTM network will be designed and trained to capture the complex patterns in the time series data.
+4. **Model Evaluation**: The models will be evaluated based on their predictive performance using metrics such as RMSE (Root Mean Squared Error), MAE (Mean Absolute Error), and MAPE (Mean Absolute Percentage Error).
+5. **Forecasting and Visualization**: The trained models will be used to forecast future prices of the S&P 500, and the results will be visualized to compare their effectiveness.
 
 By the end of this project, a comprehensive understanding of different time series forecasting techniques and their applicability to financial data is expected. The insights gained from this study will be valuable for making informed investment decisions and improving financial strategies.
 
@@ -660,35 +659,35 @@ print(auto_arima_model.summary())
 ```
 
     Performing stepwise search to minimize aic
-     ARIMA(0,0,0)(0,0,0)[0] intercept   : AIC=37082.833, Time=0.02 sec
-     ARIMA(1,0,0)(0,0,0)[0] intercept   : AIC=inf, Time=0.03 sec
-     ARIMA(0,0,1)(0,0,0)[0] intercept   : AIC=inf, Time=0.12 sec
+     ARIMA(0,0,0)(0,0,0)[0] intercept   : AIC=37082.833, Time=0.03 sec
+     ARIMA(1,0,0)(0,0,0)[0] intercept   : AIC=inf, Time=0.04 sec
+     ARIMA(0,0,1)(0,0,0)[0] intercept   : AIC=inf, Time=0.14 sec
      ARIMA(0,0,0)(0,0,0)[0]             : AIC=43034.728, Time=0.01 sec
-     ARIMA(1,0,1)(0,0,0)[0] intercept   : AIC=22726.299, Time=0.18 sec
-     ARIMA(2,0,1)(0,0,0)[0] intercept   : AIC=22723.076, Time=0.30 sec
-     ARIMA(2,0,0)(0,0,0)[0] intercept   : AIC=inf, Time=0.15 sec
-     ARIMA(3,0,1)(0,0,0)[0] intercept   : AIC=22723.479, Time=0.42 sec
-     ARIMA(2,0,2)(0,0,0)[0] intercept   : AIC=22723.245, Time=0.45 sec
-     ARIMA(1,0,2)(0,0,0)[0] intercept   : AIC=22721.751, Time=0.23 sec
-     ARIMA(0,0,2)(0,0,0)[0] intercept   : AIC=inf, Time=0.33 sec
-     ARIMA(1,0,3)(0,0,0)[0] intercept   : AIC=22722.187, Time=0.36 sec
-     ARIMA(0,0,3)(0,0,0)[0] intercept   : AIC=29740.146, Time=1.04 sec
-     ARIMA(2,0,3)(0,0,0)[0] intercept   : AIC=22694.713, Time=0.76 sec
-     ARIMA(3,0,3)(0,0,0)[0] intercept   : AIC=22648.666, Time=0.93 sec
-     ARIMA(3,0,2)(0,0,0)[0] intercept   : AIC=22647.403, Time=0.79 sec
-     ARIMA(4,0,2)(0,0,0)[0] intercept   : AIC=22648.763, Time=1.00 sec
-     ARIMA(4,0,1)(0,0,0)[0] intercept   : AIC=22724.949, Time=0.51 sec
-     ARIMA(4,0,3)(0,0,0)[0] intercept   : AIC=22727.312, Time=1.09 sec
-     ARIMA(3,0,2)(0,0,0)[0]             : AIC=22647.682, Time=0.40 sec
+     ARIMA(1,0,1)(0,0,0)[0] intercept   : AIC=22726.299, Time=0.20 sec
+     ARIMA(2,0,1)(0,0,0)[0] intercept   : AIC=22723.076, Time=0.34 sec
+     ARIMA(2,0,0)(0,0,0)[0] intercept   : AIC=inf, Time=0.16 sec
+     ARIMA(3,0,1)(0,0,0)[0] intercept   : AIC=22723.479, Time=0.44 sec
+     ARIMA(2,0,2)(0,0,0)[0] intercept   : AIC=22723.245, Time=0.48 sec
+     ARIMA(1,0,2)(0,0,0)[0] intercept   : AIC=22721.751, Time=0.25 sec
+     ARIMA(0,0,2)(0,0,0)[0] intercept   : AIC=inf, Time=0.35 sec
+     ARIMA(1,0,3)(0,0,0)[0] intercept   : AIC=22722.187, Time=0.40 sec
+     ARIMA(0,0,3)(0,0,0)[0] intercept   : AIC=29740.146, Time=1.14 sec
+     ARIMA(2,0,3)(0,0,0)[0] intercept   : AIC=22694.713, Time=0.86 sec
+     ARIMA(3,0,3)(0,0,0)[0] intercept   : AIC=22648.666, Time=1.04 sec
+     ARIMA(3,0,2)(0,0,0)[0] intercept   : AIC=22647.403, Time=0.88 sec
+     ARIMA(4,0,2)(0,0,0)[0] intercept   : AIC=22648.763, Time=1.12 sec
+     ARIMA(4,0,1)(0,0,0)[0] intercept   : AIC=22724.949, Time=0.53 sec
+     ARIMA(4,0,3)(0,0,0)[0] intercept   : AIC=22727.312, Time=1.23 sec
+     ARIMA(3,0,2)(0,0,0)[0]             : AIC=22647.682, Time=0.42 sec
     
     Best model:  ARIMA(3,0,2)(0,0,0)[0] intercept
-    Total fit time: 9.094 seconds
+    Total fit time: 10.057 seconds
                                    SARIMAX Results                                
     ==============================================================================
     Dep. Variable:                      y   No. Observations:                 2264
     Model:               SARIMAX(3, 0, 2)   Log Likelihood              -11316.701
     Date:                Thu, 04 Jul 2024   AIC                          22647.403
-    Time:                        17:51:53   BIC                          22687.477
+    Time:                        19:10:17   BIC                          22687.477
     Sample:                             0   HQIC                         22662.025
                                    - 2264                                         
     Covariance Type:                  opg                                         
@@ -733,7 +732,7 @@ auto_arima_model.summary()
   <th>Date:</th>            <td>Thu, 04 Jul 2024</td> <th>  AIC                </th>  <td>22647.403</td>
 </tr>
 <tr>
-  <th>Time:</th>                <td>17:51:53</td>     <th>  BIC                </th>  <td>22687.477</td>
+  <th>Time:</th>                <td>19:10:17</td>     <th>  BIC                </th>  <td>22687.477</td>
 </tr>
 <tr>
   <th>Sample:</th>                  <td>0</td>        <th>  HQIC               </th>  <td>22662.025</td>
@@ -788,46 +787,21 @@ auto_arima_model.summary()
 
 
 
+### Split Train and test
+
 
 ```python
 Train_end = 1763 #Index
-# Create Training and Test
+
+# Create Train and Test
 train = df.Close[:Train_end]
 test = df.Close[Train_end:]
 ```
 
 
 ```python
-test
-```
-
-
-
-
-    Date
-    2022-01-03    4796.560059
-    2022-01-04    4793.540039
-    2022-01-05    4700.580078
-    2022-01-06    4696.049805
-    2022-01-07    4677.029785
-                     ...     
-    2023-12-22    4754.629883
-    2023-12-26    4774.750000
-    2023-12-27    4781.580078
-    2023-12-28    4783.350098
-    2023-12-29    4769.830078
-    Name: Close, Length: 501, dtype: float64
-
-
-
-
-```python
-from statsmodels.tsa.statespace.sarimax import SARIMAX 
-```
-
-
-```python
 # ARIMA model
+
 best_p, best_d, best_q = auto_arima_model.order
 arima_model = ARIMA(train, order=(best_p, best_d, best_q))
 arima_model_fit = arima_model.fit()
@@ -837,26 +811,24 @@ arima_model_fit = arima_model.fit()
 
 ```python
 # Forecast
-fc_arima = arima_model_fit.forecast(501, alpha=0.05)  # 95% conf
+
+fc_arima = arima_model_fit.forecast(501, alpha=0.05)  
 fc_arima.index = test.index
 ```
 
+### Arima Prediction
+
 
 ```python
-# Crear una figura y ejes
 plt.figure(figsize=(10, 6))
 
-# Graficar las predicciones y los valores reales en una sola gráfica
 plt.plot(fc_arima, label='Predictions')
 plt.plot(test, label='Actual Values')
-
-# Añadir etiquetas, título y leyenda
 plt.xlabel('Date')
-plt.ylabel('Value')
+plt.ylabel('Price')
 plt.title('ARIMA Predictions vs Actual Values')
 plt.legend()
 
-# Mostrar la gráfica
 plt.show()
 ```
 
@@ -866,46 +838,24 @@ plt.show()
     
 
 
-## LSTM
+## 6. Simple Recurrent Neural Networks (RNN)
+
+### Train Test Split
 
 
 ```python
 train_end = 1763 #Index
-# Create Training and Test
+
 train_data = df['Close'][:train_end]
 test_data = df['Close'][train_end:]
 ```
 
-
-```python
-test_data
-```
-
-
-
-
-    Date
-    2022-01-03    4796.560059
-    2022-01-04    4793.540039
-    2022-01-05    4700.580078
-    2022-01-06    4696.049805
-    2022-01-07    4677.029785
-                     ...     
-    2023-12-22    4754.629883
-    2023-12-26    4774.750000
-    2023-12-27    4781.580078
-    2023-12-28    4783.350098
-    2023-12-29    4769.830078
-    Name: Close, Length: 501, dtype: float64
-
-
+### Reshape Train and Test
 
 
 ```python
-# Selecting Price values
+#Reshape train
 dataset_train = train_data.values
-
-# Reshaping 1D to 2D array
 dataset_train = np.reshape(dataset_train, (-1,1))
 dataset_train.shape
 
@@ -920,10 +870,8 @@ dataset_train.shape
 
 
 ```python
-# Selecting Price values
+#Reshape train
 dataset_test = test_data.values
-
-# Reshaping 1D to 2D array
 dataset_test = np.reshape(dataset_test, (-1,1))
 dataset_test.shape
 
@@ -936,6 +884,9 @@ dataset_test.shape
 
 
 
+### Standardize the data
+
+
 
 ```python
 from sklearn.preprocessing import MinMaxScaler
@@ -944,8 +895,6 @@ scaler = MinMaxScaler(feature_range=(0,1))
 # scaling dataset
 scaled_train = scaler.fit_transform(dataset_train)
 scaled_test = scaler.fit_transform(dataset_test)
-
-
 ```
 
 
@@ -955,47 +904,7 @@ y_train = []
 for i in range(50, len(scaled_train)):
 	X_train.append(scaled_train[i-50:i, 0])
 	y_train.append(scaled_train[i, 0])
-	if i <= 51:
-		print(X_train)
-		print(y_train)
-		print()
-
 ```
-
-    [array([0.07730146, 0.06460907, 0.05854629, 0.06640398, 0.07863074,
-           0.07278392, 0.0672002 , 0.06543569, 0.06146805, 0.05519271,
-           0.06421773, 0.06527375, 0.0685025 , 0.0789715 , 0.07514899,
-           0.07692701, 0.06763544, 0.05839448, 0.06483513, 0.05597542,
-           0.06470017, 0.07454506, 0.07167054, 0.07875898, 0.07638041,
-           0.07343505, 0.08080693, 0.08078667, 0.08751746, 0.09038861,
-           0.09151888, 0.09129615, 0.09054379, 0.09487921, 0.09466324,
-           0.09662684, 0.09608032, 0.09502764, 0.09292237, 0.09727121,
-           0.094029  , 0.09090819, 0.09175503, 0.08170772, 0.08446412,
-           0.07256462, 0.07124206, 0.07991619, 0.075682  , 0.08505792])]
-    [0.08272662594196878]
-    
-    [array([0.07730146, 0.06460907, 0.05854629, 0.06640398, 0.07863074,
-           0.07278392, 0.0672002 , 0.06543569, 0.06146805, 0.05519271,
-           0.06421773, 0.06527375, 0.0685025 , 0.0789715 , 0.07514899,
-           0.07692701, 0.06763544, 0.05839448, 0.06483513, 0.05597542,
-           0.06470017, 0.07454506, 0.07167054, 0.07875898, 0.07638041,
-           0.07343505, 0.08080693, 0.08078667, 0.08751746, 0.09038861,
-           0.09151888, 0.09129615, 0.09054379, 0.09487921, 0.09466324,
-           0.09662684, 0.09608032, 0.09502764, 0.09292237, 0.09727121,
-           0.094029  , 0.09090819, 0.09175503, 0.08170772, 0.08446412,
-           0.07256462, 0.07124206, 0.07991619, 0.075682  , 0.08505792]), array([0.06460907, 0.05854629, 0.06640398, 0.07863074, 0.07278392,
-           0.0672002 , 0.06543569, 0.06146805, 0.05519271, 0.06421773,
-           0.06527375, 0.0685025 , 0.0789715 , 0.07514899, 0.07692701,
-           0.06763544, 0.05839448, 0.06483513, 0.05597542, 0.06470017,
-           0.07454506, 0.07167054, 0.07875898, 0.07638041, 0.07343505,
-           0.08080693, 0.08078667, 0.08751746, 0.09038861, 0.09151888,
-           0.09129615, 0.09054379, 0.09487921, 0.09466324, 0.09662684,
-           0.09608032, 0.09502764, 0.09292237, 0.09727121, 0.094029  ,
-           0.09090819, 0.09175503, 0.08170772, 0.08446412, 0.07256462,
-           0.07124206, 0.07991619, 0.075682  , 0.08505792, 0.08272663])]
-    [0.08272662594196878, 0.09123544510763082]
-    
-
 
 
 ```python
@@ -1052,14 +961,16 @@ from sklearn.metrics import mean_squared_error
 
 ```
 
-    2024-07-04 17:51:54.427101: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-    2024-07-04 17:51:54.433734: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-    2024-07-04 17:51:54.442218: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-    2024-07-04 17:51:54.442237: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-    2024-07-04 17:51:54.448509: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+    2024-07-04 19:10:18.955561: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+    2024-07-04 19:10:19.061132: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:479] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+    2024-07-04 19:10:19.111898: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:10575] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+    2024-07-04 19:10:19.112221: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1442] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+    2024-07-04 19:10:19.185591: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
     To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-    2024-07-04 17:51:54.888943: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+    2024-07-04 19:10:19.855373: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 
+
+### RNN Model
 
 
 ```python
@@ -1102,51 +1013,51 @@ regressor.summary()
     Epoch 1/20
 
 
-    2024-07-04 17:51:55.674263: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:984] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+    2024-07-04 19:10:20.654500: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:984] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
     Your kernel may have been built without NUMA support.
-    2024-07-04 17:51:55.769910: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2251] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+    2024-07-04 19:10:20.753028: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2251] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
     Skipping registering GPU devices...
 
 
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m12s[0m 13ms/step - loss: 0.0136
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m12s[0m 13ms/step - loss: 0.0107
     Epoch 2/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m20s[0m 13ms/step - loss: 0.0016
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 0.0013
     Epoch 3/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 9.8297e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 9.5210e-04
     Epoch 4/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 9.4045e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 9.0295e-04
     Epoch 5/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 8.2393e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 7.2266e-04
     Epoch 6/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 6.9941e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 7.1496e-04
     Epoch 7/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 6.9829e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m20s[0m 12ms/step - loss: 7.2399e-04
     Epoch 8/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 8.1549e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 5.9556e-04
     Epoch 9/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 6.4103e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 7.0790e-04
     Epoch 10/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 6.1222e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 5.6945e-04
     Epoch 11/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 5.8561e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 4.7575e-04
     Epoch 12/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.8497e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 4.9299e-04
     Epoch 13/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.7350e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 4.6245e-04
     Epoch 14/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.5336e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 4.4997e-04
     Epoch 15/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.4327e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 5.0362e-04
     Epoch 16/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.2505e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 12ms/step - loss: 5.2912e-04
     Epoch 17/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.0126e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 4.0743e-04
     Epoch 18/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.1273e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 4.4354e-04
     Epoch 19/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.1467e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 4.5017e-04
     Epoch 20/20
-    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 13ms/step - loss: 5.3530e-04
+    [1m857/857[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m12s[0m 14ms/step - loss: 4.9550e-04
 
 
 
@@ -1199,6 +1110,8 @@ regressor.summary()
 
 
 
+## 7. Long short-term memory (LSTM)
+
 
 ```python
 #Initialising the model
@@ -1230,29 +1143,29 @@ regressorLSTM.summary()
 ```
 
     Epoch 1/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 6ms/step - accuracy: 0.0012 - loss: 0.0084
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m11s[0m 6ms/step - accuracy: 9.3927e-04 - loss: 0.0087
     Epoch 2/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 6.4761e-04 - loss: 7.2294e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0020 - loss: 8.5150e-04
     Epoch 3/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 8.8511e-04 - loss: 5.3997e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0021 - loss: 4.1361e-04
     Epoch 4/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 3.5425e-04 - loss: 5.1842e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 9.3698e-04 - loss: 3.7717e-04
     Epoch 5/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0017 - loss: 4.5730e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0028 - loss: 3.1055e-04
     Epoch 6/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 8.1241e-04 - loss: 3.5432e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 9.6754e-04 - loss: 2.9433e-04
     Epoch 7/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0015 - loss: 3.5856e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0019 - loss: 2.7921e-04
     Epoch 8/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0012 - loss: 2.5012e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 2.9833e-04 - loss: 3.5377e-04
     Epoch 9/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 7.2090e-05 - loss: 3.3976e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0018 - loss: 2.6766e-04
     Epoch 10/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 8.2796e-04 - loss: 3.2131e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0013 - loss: 2.5124e-04
     Epoch 11/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 5.5578e-04 - loss: 2.9899e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0024 - loss: 2.5989e-04
     Epoch 12/12
-    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 0.0018 - loss: 2.7035e-04
+    [1m1713/1713[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 6ms/step - accuracy: 8.3017e-04 - loss: 2.8485e-04
 
 
 
@@ -1309,39 +1222,41 @@ y_LSTM = regressorLSTM.predict(X_test)
 
 ```
 
-    [1m15/15[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 25ms/step
-    [1m15/15[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 13ms/step
+    [1m15/15[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 24ms/step
+    [1m15/15[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 12ms/step
 
+
+### Scaling Back
 
 
 ```python
-# scaling back from 0-1 to original
-y_RNN_O = scaler.inverse_transform(y_RNN) 
-y_LSTM_O = scaler.inverse_transform(y_LSTM) 
+y_RNN_inv = scaler.inverse_transform(y_RNN) 
+y_LSTM_inv = scaler.inverse_transform(y_LSTM) 
 
 ```
+
+### Predicted Prices
 
 
 ```python
 fig, axs = plt.subplots(2,figsize =(18,12),sharex=True, sharey=True)
-fig.suptitle('Model Predictions')
 
 #Plot for RNN predictions
-axs[0].plot(train_data.index[150:], train_data[150:], label = "train_data", color = "b")
-axs[0].plot(test_data.index, test_data, label = "test_data", color = "g")
-axs[0].plot(test_data.index[50:], y_RNN_O, label = "y_RNN", color = "brown")
+axs[0].plot(train_data.index[150:], train_data[150:], label = "Train", color = "b")
+axs[0].plot(test_data.index, test_data, label = "Test", color = "g")
+axs[0].plot(test_data.index[50:], y_RNN_inv, label = "RNN", color = "r")
 axs[0].legend()
 axs[0].title.set_text("Basic RNN")
 
 #Plot for LSTM predictions
-axs[1].plot(train_data.index[150:], train_data[150:], label = "train_data", color = "b")
-axs[1].plot(test_data.index, test_data, label = "test_data", color = "g")
-axs[1].plot(test_data.index[50:], y_LSTM_O, label = "y_LSTM", color = "orange")
+axs[1].plot(train_data.index[150:], train_data[150:], label = "Train", color = "b")
+axs[1].plot(test_data.index, test_data, label = "Test", color = "g")
+axs[1].plot(test_data.index[50:], y_LSTM_inv, label = "LSTM", color = "r")
 axs[1].legend()
 axs[1].title.set_text("LSTM")
 
-plt.xlabel("Days")
-plt.ylabel("Close price")
+plt.xlabel("Date")
+plt.ylabel("Price")
 
 plt.show()
 
@@ -1349,7 +1264,7 @@ plt.show()
 
 
     
-![png](Forecasting_SP500_files/Forecasting_SP500_45_0.png)
+![png](Forecasting_SP500_files/Forecasting_SP500_51_0.png)
     
 
 
@@ -1359,19 +1274,19 @@ fig, axs = plt.subplots(2,figsize =(18,12),sharex=True, sharey=True)
 fig.suptitle('Model Predictions')
 
 #Plot for RNN predictions
-axs[0].plot(test_data.index, test_data, label = "test_data", color = "g")
-axs[0].plot(test_data.index[50:], y_RNN_O, label = "y_RNN", color = "r")
+axs[0].plot(test_data.index, test_data, label = "Test", color = "g")
+axs[0].plot(test_data.index[50:], y_RNN_inv, label = "RNN", color = "r")
 axs[0].legend()
 axs[0].title.set_text("Basic RNN")
 
 #Plot for LSTM predictions
-axs[1].plot(test_data.index, test_data, label = "test_data", color = "g")
-axs[1].plot(test_data.index[50:], y_LSTM_O, label = "y_LSTM", color = "r")
+axs[1].plot(test_data.index, test_data, label = "Test", color = "g")
+axs[1].plot(test_data.index[50:], y_LSTM_inv, label = "LSTM", color = "r")
 axs[1].legend()
 axs[1].title.set_text("LSTM")
 
-plt.xlabel("Days")
-plt.ylabel("Close price")
+plt.xlabel("Date")
+plt.ylabel("Price")
 
 plt.show()
 
@@ -1379,6 +1294,22 @@ plt.show()
 
 
     
-![png](Forecasting_SP500_files/Forecasting_SP500_46_0.png)
+![png](Forecasting_SP500_files/Forecasting_SP500_52_0.png)
     
+
+
+## Conclusion
+
+This project has demonstrated the power and potential of deep learning techniques, particularly Long Short-Term Memory (LSTM) networks, in forecasting stock market trends. By comparing ARIMA, a simple RNN, and LSTM models in predicting S&P 500 index prices, we have gained valuable insights into the strengths and limitations of each approach.
+
+The superior performance of the LSTM model underscores the importance of capturing long-term dependencies and non-linear patterns in financial time series data. While traditional statistical methods like ARIMA provide a solid baseline and the simple RNN shows promise in learning temporal patterns, the LSTM's ability to retain relevant information over extended periods proved crucial in achieving more accurate predictions.
+This study contributes to the growing body of evidence supporting the application of advanced machine learning techniques in financial forecasting. The results suggest that deep learning models, when properly implemented and trained, can offer significant advantages over traditional forecasting methods.
+However, it's important to note that no forecasting model is infallible, especially in the inherently unpredictable realm of financial markets. External factors, unforeseen events, and market sentiment can all influence stock prices in ways that may not be captured by historical data alone.
+Moving forward, this project opens up several avenues for future research, including:
+
+- Exploring hybrid models that combine statistical and deep learning approaches.
+- Incorporating additional relevant features such as economic indicators or sentiment analysis.
+- Investigating the impact of different time horizons on model performance.
+- Applying these techniques to individual stocks or other financial instruments.
+
 
