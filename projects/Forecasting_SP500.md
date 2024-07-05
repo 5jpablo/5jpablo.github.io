@@ -1,7 +1,7 @@
 ---
 layout: post
 sidebar: false
-title: Osteoporosis Risk Prediction
+title: Forecasting S&P 500 Stock Index.
 ---
 
 ## 1. Introduction
