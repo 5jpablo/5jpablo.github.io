@@ -30,7 +30,34 @@ By comparing these diverse methodologies, the study contributes to the ongoing r
 <br>
 
 ---
+# Supervised Machine Learning: Classification and Anomaly Detection.
 
+## Credit Card Fraud Detection.
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-E97627?logo=Jupyter)](/projects/Credit_Card_Fraud_Detection.html)
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/5jpablo/Credit_Card_Fraud_Detection)
+
+<div style="text-align: justify; line-height: 1.2;">
+    <em>Key Skills: Python, exploratory data analysis, machine learning algorithms (Decision Tree, Random Forest, GBM, XGB), artificial neural networks, model evaluation and selection.</em>
+</div>
+<br>
+<div style="text-align: justify">
+Credit card fraud detection is critical for financial institutions to mitigate financial losses and safeguard customers. This project aims to develop an <b>effective fraud detection system using machine learning algorithms:</b>
+<ul>
+  <li>Decision Trees</li>
+  <li>Random Forest</li>
+  <li>Gradient Boosting Machine (GBM)</li>
+  <li>XGBoost</li>
+  <li>Artificial Neural Networks (ANN)</li>
+</ul>
+The project utilizes a comprehensive dataset of credit card transactions, encompassing both fraudulent and legitimate transactions. Data preprocessing techniques are applied to handle missing values, outliers, and categorical variables. Each machine learning algorithm is trained and evaluated on the preprocessed data, assessing <b>performance through metrics such as accuracy, precision, recall, and F1-score</b>.
+
+The final outcome of the project identified the <b>Random Forest model</b> as the <b>most effective for credit card fraud detection</b>. This model demonstrated a <b>high balance between precision (0.844), recall (0.875), and F1-score (0.859), coupled with exceptionally high overall accuracy (0.9995)</b>. Its outstanding performance across these metrics positioned it as the recommended choice for practical implementation in fraud detection systems. Other models evaluated, such as XGBoost and Artificial Neural Networks (ANN), faced challenges either in precision or recall, highlighting Random Forest's superiority in achieving reliable and accurate fraud predictions.
+</div>
+<br>
+<center><img src="/projects/Credit_Card_Fraud_Detection_files/Credit_Card_Fraud_Detection_62_0.png"/></center>
+<br>
+
+---
 # Supervised Machine Learning: Classification.
 
 ## Osteoporosis Risk Prediction.
